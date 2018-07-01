@@ -1,5 +1,11 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 50px;
+  background-color: white;
   font-family: sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: flex;
 }
