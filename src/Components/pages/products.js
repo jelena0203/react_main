@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SingleTodo from './SingleTodo';
 
 
 class Products extends Component {
@@ -31,12 +32,20 @@ class Products extends Component {
     });
   }
 
+  deleteTodo = i => {
+    //copy the state of the todos
+    let todosCopy = this.state.todos.slice();
+    //splice(i,1) at position i, remove 1 item...i is the current indes of this
+    todosCopy.splice(i,1);
+    this.setState({ todos: todosCopy });
+  }
+
   render() {
     {/*map is going to take an element 'e' and an index 'i'. We are going to, for each element, return some kind of JavaScript or HTML element.
     We're going to return a list and we will let the value be 'e'.Key is index in this list */}
     let bulletedTodos = this.state.todos.map ((e, i) => {
       return(
-      <li key={i}>{e}</li>
+      <SingleTodo todo={e} delete={() => this.deleteTodo(i)}/>
       );
     });
 

@@ -48,7 +48,7 @@ class TodoList extends Component {
             <ul className="list-group">
                 {this.state.todos.map((todo, index) => 
                     <li className="list-group-item" key={index}>
-                        <h4 className="list-group-item-heading">{todo.todoTitle} <small><span className="label label-info">{todo.todoPriority}</span></small></h4>
+                        <h4 className="list-group-item-heading">{todo.todoTitle} <small><span className="label label-default">{todo.todoPriority}</span></small></h4>
 
                         <p><span className="glyphicon glyphicon-user"></span>{todo.todoResponsible}</p>
                         <p>{todo.todoDescription}</p>
@@ -108,10 +108,10 @@ class TodoInput extends Component {
      render() {
        return (
             <div>
-                <h4>Add New Todo</h4>
+                <h5>Add new todo</h5>
                 <form className="form-horizontal" onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="inputTodoTitle" className="col-sm-2 control-label">Todo</label>
+                        <label htmlFor="inputTodoTitle" className="col-sm-2 control-label">ToDo</label>
                             <div className="col-sm-10">
                                 <input  name="todoTitle"
                                         type="text"
@@ -151,7 +151,7 @@ class TodoInput extends Component {
                             </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="inputTodoPriority" className="col-sm-2 control-label">Priority</label>
+                        <label  htmlFor="inputTodoPriority" className="col-sm-2  control-label">Priority</label>
                             <div className="col-sm-10">
                                 <select  name="todoPriority"
                                         type="text"
@@ -170,7 +170,7 @@ class TodoInput extends Component {
                             </div>
                     </div>
                     <div>
-                        <h4>Todo Count: <span className="badge">{this.state.count}</span></h4>
+                        <h5>Todo count: <span className="badge">{this.state.count}</span></h5>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-offset-2 col-sm-10">

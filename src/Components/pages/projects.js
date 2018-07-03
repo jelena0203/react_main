@@ -6,11 +6,10 @@ class Projects extends Component {
     return (
         <div className="container-fluid">
         
-        <h1>
-        Projects page
-        </h1>
+        <h2>
+        Project list
+        </h2>
         <p>
-        Projects
         <TodoList />
         </p>
         </div>

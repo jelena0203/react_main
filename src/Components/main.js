@@ -7,6 +7,7 @@ import Projects from './pages/projects';
 import About from './pages/aboutme';
 import Contact from './pages/contact';
 import Products from './pages/products';
+import Login from './pages/login';
 
 
 
@@ -18,6 +19,7 @@ const Main = () => (
         <Route exact path = "/Resume" component={Resume} />;
         <Route exact path = "/About" component={About} />;
         <Route exact path = "/Contact" component={Contact} />;
+        <Route exact path = "/Login" component={Login} />;
     </Switch>
 )
 
