@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Header, Drawer, Content, Navigation} from 'react-mdl';
 import Main from './Components/main';
+import styled from 'styled-components';
 
 
 
@@ -35,16 +36,6 @@ class App extends Component {
                             <Link to="/login">Login</Link>
                         </Navigation>
                     </Header>
-                    <Drawer title="Title">
-                        <Navigation>
-                            <Link to="/resume">Resume</Link>
-                            <Link to="/about">About Me</Link>
-                            <Link to="/projects">Projects</Link>
-                            <Link to="/products">Products</Link>
-                            <Link to="/contact">Contact</Link>
-                            <Link to="/login">Login</Link>
-                        </Navigation>
-                    </Drawer>
                     <Content>
                         <div className="page-content" />
                         <Main />

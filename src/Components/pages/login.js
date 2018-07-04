@@ -1,49 +1,62 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./Login.css";
 
-class Login extends Component {
-constructor(props){
+export default class Login extends Component {
+  constructor(props) {
     super(props);
-    this.state={
-        email: '',
-        password: ''
-    }
-}
-    signUp = () => {
-        console.log('this.state', this.state);
-    }
-    render () {
-        return (
-        <div className="wrapper">
-            <div className="form-inline">
-                <h2 className="form-signin-heading">Please login</h2>
-                <div className="form-group">
-                    <input
-                        className="form-control"
-                        type="text"
-                        placeholder="email"
-                        onChange={event => this.setState({email: event.target.value})}
-                    />
-                    <input
-                        className="form-control"
-                        type="password"
-                        placeholder="password"
-                        required="" 
-                        autoFocus=""
-                        onChange={event => this.setState({password: event.target.value})}
-                    /> 
-                    <button
-                        className="btn btn-primary"
-                        type="button"
-                        onClick={this.signUp}
-                    >
-                    Login
-                    </button>
-                </div>
-            </div>
-            </div>
 
-        )
-    }
-}
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
 
-export default Login;
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <Button
+            block
+            bsSize="large"
+            disabled={!this.validateForm()}
+            type="submit"
+          >
+            Login
+          </Button>
+        </form>
+      </div>
+    );
+  }
+}
